@@ -2,6 +2,7 @@
 package Evento;
 
 import com.sun.java.accessibility.util.SwingEventMonitor;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.*;
@@ -17,7 +18,7 @@ public class Ventanas {
        marco2.setTitle("V2");
        mimarco.setBounds(500,300,500,200);
        marco2.setBounds(300,200,500,200);
-       
+       marco2.addWindowListener(new M_Venta());
     }
 }
 
@@ -26,45 +27,16 @@ class MarcoVentana extends JFrame {
     public MarcoVentana(){
         
         setVisible(true);
-        M_Venta miv = new   M_Venta();
-        addWindowListener(miv);
     }
     
 }
 
-class M_Venta implements WindowListener{
+class M_Venta extends WindowAdapter{
 
-    
-    
-    @Override
-    public void windowOpened(WindowEvent we) {
-     }
-
-    @Override
-    public void windowClosing(WindowEvent we) {
-       }
-
-    @Override
-    public void windowClosed(WindowEvent we) {
-     }
-
+   
     @Override
     public void windowIconified(WindowEvent we) {
         System.out.println("Ventana Clausurada");
     }
 
-    @Override
-    public void windowDeiconified(WindowEvent we) {
-     }
-
-    @Override
-    public void windowActivated(WindowEvent we) {
-       }
-
-    @Override
-    public void windowDeactivated(WindowEvent we) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
 }
